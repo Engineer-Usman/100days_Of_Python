@@ -52,16 +52,71 @@ import random
 # print(mix)
 
 #video - 45 " challenge"
-row1 = ["⬜", "⬜", "⬜"]
-row2 = ["⬜", "⬜", "⬜"]
-row3 = ["⬜", "⬜", "⬜"]
-map = [row1, row2, row3]
-print(f"{row1}\n{row2}\n{row3}")
-position = input("Where you want to put your treasure?")
-horizontal = int(position[0])
-vertical = int(position[1])
-# print(horizontal)
-# print(vertical)
-selected_row = map[vertical - 1]
-selected_row[horizontal - 1] = "X"
-print(f"{row1}\n{row2}\n{row3}")
+# row1 = ["⬜", "⬜", "⬜"]
+# row2 = ["⬜", "⬜", "⬜"]
+# row3 = ["⬜", "⬜", "⬜"]
+# map = [row1, row2, row3]
+# print(f"{row1}\n{row2}\n{row3}")
+# position = input("Where you want to put your treasure?")
+# horizontal = int(position[0])
+# vertical = int(position[1])
+# # print(horizontal)
+# # print(vertical)
+# selected_row = map[vertical - 1]
+# selected_row[horizontal - 1] = "X"
+# print(f"{row1}\n{row2}\n{row3}")
+
+#video-46  "Final challenge Rock Paper Scissor Challenge"
+
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+#Write your code below this line 👇
+game_images = [rock, paper, scissors]
+my_input = int(input("what do you choose 0 for Rock, 1 for paper, 2 for Scissor\n"))
+
+print(f"You choose: {my_input}")
+if my_input >= 3 or my_input < 0:
+    print("You Type invalid number, You loose")
+else:
+    print(game_images[my_input])
+    
+    computer_output = random.randint(0, 2)
+    print(f"computer choose: {computer_output}")
+    print(game_images[computer_output])
+
+    if my_input == computer_output:
+        print("Match drawn")
+    elif computer_output == 2 and my_input == 0:
+        print("You Win!") 
+    elif computer_output == 0 and my_input == 2:
+        print("You Loose!")
+    elif computer_output > my_input:
+        print("You Loose!")
+    elif computer_output < my_input:
+        print("You Win!")
+
